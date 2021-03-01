@@ -1,6 +1,8 @@
 const express = require('express');
 const exhbs = require('express-handlebars');
-const products = require('./products.json')
+const products = require('./products.json');
+
+const PORT = process.env.PORT || 4444;
 
 const app = express()
 app.set('view engine', 'hbs');
@@ -11,7 +13,7 @@ app.engine('hbs', exhbs({
 app.use(express.static('public'))
 
 
-  app.listen(4444, () => {
+  app.listen(PORT, () => {
       console.log('hello');
   })
 
